@@ -8,7 +8,8 @@
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <title>Document</title>
 </head>
-<body style="height: 100vh; width: 100vw; overflow-y: auto; overflow-x: hidden; background-color: antiquewhite;">
+<body id="body"  style="height: 100vh; width: 100vw;overflow-x: hidden; background-color: antiquewhite;">
+    <div id="bgc-toggle"></div>
     <header class="container-fluid p-5 custom-background">
     <nav class="navbar navbar-expand-lg  custom-background">
         <div class="container-fluid">
@@ -234,7 +235,7 @@
         
     </div>
     <div id="chat-box" class="chat-class-hidden">
-        <div class="px-5 py-2 d-flex align-items-center justify-content-between border">
+        <div class="px-5 py-2 d-flex align-items-center justify-content-between border sidebar-upper">
             <div>
                 <div class="fs-2">Brian cox</div>
                 <div class="d-flex align-items-center justify-content-start gap-2">
@@ -247,58 +248,61 @@
                 <div class="d-flex align-items-center justify-content-center rounded  pad" id="chat-close">x</div>
             </div>
         </div>
-        <div class="d-flex align-items-center justify-content-center flex-column px-5 py-2 mid-section">
-           <div class="d-flex align-items-center justify-content-center flex-column gap-2">
+        <div class="d-flex align-items-center justify-content-center flex-column px-5 sidebar-middle-section w-100 pt-5">
+           <div class="d-flex align-items-center justify-content-center flex-column gap-2 py-2">
             <div class="d-flex align-items-center justify-content-start w-100 px-2 gap-2">
                 <div class="bg-primary rounded-circle p-1"><img src="./public/images/person.svg" alt=""></div>
                 <div class="heading">Brian cox</div>
                 <div class="content">2 mins</div>
             </div>
-            <div class="text-center px-3 bg-chat rounded py-2">
+            <div class="text-start px-3 bg-chat  rounded py-2">
                 How likely are you to recommend our company to your friends and family ?
             </div>
            </div>
-           <div class="d-flex align-items-center justify-content-center flex-column gap-2">
-            <div class="d-flex align-items-center justify-content-start w-100 px-2 gap-2">
-                <div class="bg-primary rounded-circle p-1"><img src="./public/images/person.svg" alt=""></div>
-                <div class="heading">Brian cox</div>
+           <div class="d-flex align-items-center justify-content-center flex-column gap-2 py-2">
+            <div class="d-flex align-items-center justify-content-end w-100 px-2 gap-2">
                 <div class="content">2 mins</div>
+                <div class="heading">Brian cox</div>
+                <div class="bg-primary rounded-circle p-1"><img src="./public/images/person.svg" alt=""></div>
             </div>
-            <div class="text-center px-3 bg-chat rounded py-2">
+            <div class="text-end px-3  rounded py-2" style="background-color: lightgreen;">
                 How likely are you to recommend our company to your friends and family ?
             </div>
            </div>
-           <div class="d-flex align-items-center justify-content-center flex-column gap-2">
+           <div class="d-flex align-items-center justify-content-center flex-column gap-2 py-2">
             <div class="d-flex align-items-center justify-content-start w-100 px-2 gap-2">
                 <div class="bg-primary rounded-circle p-1"><img src="./public/images/person.svg" alt=""></div>
                 <div class="heading">Brian cox</div>
                 <div class="content">2 mins</div>
             </div>
-            <div class="text-center px-3 bg-chat rounded py-2">
+            <div class="text-start px-3 bg-chat  rounded py-2">
                 How likely are you to recommend our company to your friends and family ?
             </div>
            </div>
-           <div class="d-flex align-items-center justify-content-center flex-column gap-2">
-            <div class="d-flex align-items-center justify-content-start w-100 px-2 gap-2">
-                <div class="bg-primary rounded-circle p-1"><img src="./public/images/person.svg" alt=""></div>
-                <div class="heading">Brian cox</div>
-                <div class="content">2 mins</div>
+           <div class="d-flex align-items-center justify-content-center flex-column gap-2 py-2">
+            <div class="d-flex align-items-center justify-content-end w-100 px-2 gap-2">
+                <div class="d-flex align-items-center justify-content-end w-100 px-2 gap-2">
+                    <div class="content">2 mins</div>
+                    <div class="heading">Brian cox</div>
+                    <div class="bg-primary rounded-circle p-1"><img src="./public/images/person.svg" alt=""></div>
+                </div>
             </div>
-            <div class="text-center px-3 bg-chat rounded py-2">
+            <div class="text-end px-3  rounded py-2" style="background-color: lightgreen;">
                 How likely are you to recommend our company to your friends and family ?
             </div>
-        </div>  
-    </div>
-    <div class="w-100 px-4 d-flex align-items-end justify-content-center py-5">
-        <div class="d-flex align-items-center justify-content-between w-100">
-         <div class="d-flex gap-2">
-            <div>key</div>
-             <div>key</div>
-         </div>
-         <div><button class="px-3 py-2 rounded bg-success">Send</button></div>
+           </div>  
         </div>
-     </div>
+        <div class="w-100 px-4 d-flex align-items-end justify-content-center py-4">
+            <div class="d-flex align-items-center justify-content-between w-100">
+             <div class="d-flex gap-2">
+                <div>key</div>
+                 <div>key</div>
+             </div>
+             <div><button class="px-4 py-2 rounded" style="background-color: lightgreen; border: 0;color: white;">Send</button></div>
+            </div>
+         </div>
     </div>
+   
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -328,57 +332,69 @@
             <div class="heading">Activity Logs</div>
             <div style="cursor: pointer;" id="close-sidebar">X</div>
         </div>
-        <div class="sidebar-middle-section py-4">
-            <div class="first-div gap-3">
+        <div class="sidebar-middle-section w-100 py-4">
+            <div class="first-div gap-3 w-100">
                 <div class="timeline-parent">
                     <div class="timeline"></div>
                     <div class="timeline-icon bg-sidebar"><img src="./public/images/search (1).svg" alt=""></div>
                 </div>
-                <div class="d-flex align-items-center justify-content-start flex-column">
-                    <div class=" sidebar-heading">There are 2 new tasks <br> for you in “AirPlus Mobile App” <br>project:</div>
-                    <div class="d-flex align-items-center justify-content-start w-100 gap-2">
+                <div class="d-flex align-items-center justify-content-start flex-column" style="flex: 1;">
+                    <div class=" sidebar-heading">There are 2 new tasks for you in “AirPlus Mobile App” project:</div>
+                    <div class="d-flex align-items-center justify-content-start w-100 gap-2" style="padding-block: 5px;">
                         <div class=" sidebar-container">
                             Added at 4:23 PM by
                         </div>
-                        <div><img src="./public/images/person.svg" alt=""></div>
+                        <div><img class="rounded-circle p-1" style="background-color: lightblue;" src="./public/images/person.svg" alt=""></div>
                     </div>
-                    <div class="d-flex broad-container gap-3 px-1 py-1">
+                    <div class=" w-100" >
+                    <div class="d-flex align-items-center justify-content-center broad-container gap-3 px-1 py-1 w-100 mb-2" style="height: 40px;">
                         <div class="w-100 d-flex sidebar-head">Meeting with customer</div>
-                        <div class="w-100 sidebar-head">Application design</div>
-                        <div class="w-100 d-flex side-img">
-                            <div class="img1"><img src="./public/images/person.svg" alt=""></div>
-                            <div class="img2"><img src="./public/images/person.svg" alt=""></div>
-                            <div class="img3"><img src="./public/images/person.svg" alt=""></div>
+                        <div class="w-100 sidebar-head w-100 rounded text-center" style="padding: 1px; background-color: lightgray;">Application design</div>
+                        <div class="w-100 d-flex align-items-center justify-content-center side-img">
+                            <div class="img1"><img class="rounded-circle" style="height: 20px; background-color: lightskyblue;"  src="./public/images/person.svg" alt=""></div>
+                            <div class="img2"><img class="rounded-circle" style="height: 20px; background-color: lightgreen;"  src="./public/images/person.svg" alt=""></div>
+                            <div class="img3"><img class="rounded-circle" style="height: 20px; background-color: lightsalmon;"  src="./public/images/person.svg" alt=""></div>
                         </div>
-                        <div class="w-100 sidebar-head">in progress</div>
-                        <div class="w-100 sidebar-head">view</div>
+                        <div class=" sidebar-head w-100 text-center rounded" style="padding: 1px; background-color: lightgreen;">in progress</div>
+                        <div class="w-100 sidebar-head text-center">view</div>
                     </div>
-                    <div></div>
+                    <div class="d-flex align-items-center justify-content-center broad-container gap-3 px-1 py-1 w-100" style="height: 40px; overflow-x: auto;">
+                        <div class="w-100 d-flex sidebar-head">Meeting with customer</div>
+                        <div class="w-100 sidebar-head w-100 rounded text-center" style="padding: 1px; background-color: lightgray;">Application design</div>
+                        <div class="w-100 d-flex align-items-center justify-content-center side-img">
+                            <div class="img1"><img class="rounded-circle" style="height: 20px; background-color: lightskyblue;"  src="./public/images/person.svg" alt=""></div>
+                            <div class="img2"><img class="rounded-circle" style="height: 20px; background-color: lightgreen;"  src="./public/images/person.svg" alt=""></div>
+                            <div class="img3"><img class="rounded-circle" style="height: 20px; background-color: lightsalmon;"  src="./public/images/person.svg" alt=""></div>
+                        </div>
+                        <div class=" sidebar-head w-100 text-center rounded" style="padding: 1px; background-color: lightblue;">completed</div>
+                        <div class="w-100 sidebar-head text-center">view</div>
+                    </div>
+                </div>
                 </div>
             </div>
-            <div class="first-div gap-3">
+            <div class="first-div gap-3 w-100">
                 <div class="timeline-parent">
                     <div class="timeline"></div>
                     <div class="timeline-icon bg-sidebar"><img src="./public/images/chat-square-text.svg" alt=""></div>
                 </div>
-                <div class="d-flex align-items-center justify-content-start flex-column">
-                    <div class=" sidebar-heading">There are 2 new tasks <br> for you in “AirPlus Mobile App” <br>project:</div>
-                    <div class="d-flex align-items-center justify-content-start w-100 gap-2">
+                <div class="d-flex align-items-center justify-content-start flex-column" style="flex: 1;">
+                    <div class=" sidebar-heading">There are 2 new tasks for you in “AirPlus Mobile App” project:</div>
+                    <div class="d-flex align-items-center justify-content-start w-100 gap-2" style="padding-block: 5px;">
                         <div class=" sidebar-container">
                             Added at 4:23 PM by
                         </div>
-                        <div><img src="./public/images/person.svg" alt=""></div>
+                        <div><img class="rounded-circle p-1" style="background-color: lightblue;" src="./public/images/person.svg" alt=""></div>
                     </div>
-                    <div class="d-flex broad-container gap-3 px-1 py-1">
+                    <div class="d-flex align-items-center justify-content-center broad-container gap-3 px-1 py-1">
                         <div class="w-100 d-flex sidebar-head">Meeting with customer</div>
-                        <div class="w-100 sidebar-head">Application design</div>
-                        <div class="w-100 d-flex side-img">
-                            <div class="img1"><img src="./public/images/person.svg" alt=""></div>
-                            <div class="img2"><img src="./public/images/person.svg" alt=""></div>
-                            <div class="img3"><img src="./public/images/person.svg" alt=""></div>
+                        <div class="w-100 sidebar-head w-100 rounded text-center" style="padding: 1px; background-color: lightgray;">Application design</div>
+                        <div class="w-100 d-flex align-items-center justify-content-center side-img">
+                            <div class="img1"><img class="rounded-circle" style="height: 20px; background-color: lightskyblue;"  src="./public/images/person.svg" alt=""></div>
+                            <div class="img2"><img class="rounded-circle" style="height: 20px; background-color: lightgreen;"  src="./public/images/person.svg" alt=""></div>
+                            <div class="img3"><img class="rounded-circle" style="height: 20px; background-color: lightsalmon;"  src="./public/images/person.svg" alt=""></div>
                         </div>
-                        <div class="w-100 sidebar-head">in progress</div>
-                        <div class="w-100 sidebar-head">view</div>
+                        <div class=" sidebar-head w-100 text-center rounded" style="padding: 1px; background-color: lightgreen;">in progress</div>
+                        <div class="w-100 sidebar-head text-center">view</div>
                     </div>
                     <div></div>
                 </div>
@@ -388,24 +404,24 @@
                     <div class="timeline"></div>
                     <div class="timeline-icon bg-sidebar"><img style="height: 20px; width: 20px;" src="./public/images/euro-sign-svgrepo-com.svg" alt=""></div>
                 </div>
-                <div class="d-flex align-items-center justify-content-start flex-column">
-                    <div class=" sidebar-heading">There are 2 new tasks <br> for you in “AirPlus Mobile App” <br>project:</div>
-                    <div class="d-flex align-items-center justify-content-start w-100 gap-2">
+                <div class="d-flex align-items-center justify-content-start flex-column" style="flex: 1;">
+                    <div class=" sidebar-heading">There are 2 new tasks for you in “AirPlus Mobile App” project:</div>
+                    <div class="d-flex align-items-center justify-content-start w-100 gap-2" style="padding-block: 5px;">
                         <div class=" sidebar-container">
                             Added at 4:23 PM by
                         </div>
-                        <div><img src="./public/images/person.svg" alt=""></div>
+                        <div><img class="rounded-circle p-1" style="background-color: lightblue;" src="./public/images/person.svg" alt=""></div>
                     </div>
-                    <div class="d-flex broad-container gap-3 px-1 py-1">
+                    <div class="d-flex align-items-center justify-content-center broad-container gap-3 px-1 py-1">
                         <div class="w-100 d-flex sidebar-head">Meeting with customer</div>
-                        <div class="w-100 sidebar-head">Application design</div>
-                        <div class="w-100 d-flex side-img">
-                            <div class="img1"><img src="./public/images/person.svg" alt=""></div>
-                            <div class="img2"><img src="./public/images/person.svg" alt=""></div>
-                            <div class="img3"><img src="./public/images/person.svg" alt=""></div>
+                        <div class="w-100 sidebar-head w-100 rounded text-center" style="padding: 1px; background-color: lightgray;">Application design</div>
+                        <div class="w-100 d-flex align-items-center justify-content-center side-img">
+                            <div class="img1"><img class="rounded-circle" style="height: 20px; background-color: lightskyblue;"  src="./public/images/person.svg" alt=""></div>
+                            <div class="img2"><img class="rounded-circle" style="height: 20px; background-color: lightgreen;"  src="./public/images/person.svg" alt=""></div>
+                            <div class="img3"><img class="rounded-circle" style="height: 20px; background-color: lightsalmon;"  src="./public/images/person.svg" alt=""></div>
                         </div>
-                        <div class="w-100 sidebar-head">in progress</div>
-                        <div class="w-100 sidebar-head">view</div>
+                        <div class=" sidebar-head w-100 text-center rounded" style="padding: 1px; background-color: lightgreen;">in progress</div>
+                        <div class="w-100 sidebar-head text-center">view</div>
                     </div>
                     <div></div>
                 </div>
@@ -415,24 +431,24 @@
                     <div class="timeline"></div>
                     <div class="timeline-icon bg-sidebar"><img style="height: 20px; width: 20px;" src="./public/images/sliders.svg" alt=""></div>
                 </div>
-                <div class="d-flex align-items-center justify-content-start flex-column">
-                    <div class=" sidebar-heading">There are 2 new tasks <br> for you in “AirPlus Mobile App” <br>project:</div>
-                    <div class="d-flex align-items-center justify-content-start w-100 gap-2">
+                <div class="d-flex align-items-center justify-content-start flex-column" style="flex: 1;">
+                    <div class=" sidebar-heading">There are 2 new tasks for you in “AirPlus Mobile App” project:</div>
+                    <div class="d-flex align-items-center justify-content-start w-100 gap-2" style="padding-block: 5px;">
                         <div class=" sidebar-container">
                             Added at 4:23 PM by
                         </div>
-                        <div><img src="./public/images/person.svg" alt=""></div>
+                        <div><img class="rounded-circle p-1" style="background-color: lightblue;" src="./public/images/person.svg" alt=""></div>
                     </div>
-                    <div class="d-flex broad-container gap-3 px-1 py-1">
+                    <div class="d-flex align-items-center justify-content-center broad-container gap-3 px-1 py-1">
                         <div class="w-100 d-flex sidebar-head">Meeting with customer</div>
-                        <div class="w-100 sidebar-head">Application design</div>
-                        <div class="w-100 d-flex side-img">
-                            <div class="img1"><img src="./public/images/person.svg" alt=""></div>
-                            <div class="img2"><img src="./public/images/person.svg" alt=""></div>
-                            <div class="img3"><img src="./public/images/person.svg" alt=""></div>
+                        <div class="w-100 sidebar-head w-100 rounded text-center" style="padding: 1px; background-color: lightgray;">Application design</div>
+                        <div class="w-100 d-flex align-items-center justify-content-center side-img">
+                            <div class="img1"><img class="rounded-circle" style="height: 20px; background-color: lightskyblue;"  src="./public/images/person.svg" alt=""></div>
+                            <div class="img2"><img class="rounded-circle" style="height: 20px; background-color: lightgreen;"  src="./public/images/person.svg" alt=""></div>
+                            <div class="img3"><img class="rounded-circle" style="height: 20px; background-color: lightsalmon;"  src="./public/images/person.svg" alt=""></div>
                         </div>
-                        <div class="w-100 sidebar-head">in progress</div>
-                        <div class="w-100 sidebar-head">view</div>
+                        <div class=" sidebar-head w-100 text-center rounded" style="padding: 1px; background-color: lightgreen;">in progress</div>
+                        <div class="w-100 sidebar-head text-center">view</div>
                     </div>
                     <div></div>
                 </div>
@@ -442,24 +458,24 @@
                     <div class="timeline"></div>
                     <div class="timeline-icon bg-sidebar"><img src="./public/images/chat-square-text.svg" alt=""></div>
                 </div>
-                <div class="d-flex align-items-center justify-content-start flex-column">
-                    <div class=" sidebar-heading">There are 2 new tasks <br> for you in “AirPlus Mobile App” <br>project:</div>
-                    <div class="d-flex align-items-center justify-content-start w-100 gap-2">
+                <div class="d-flex align-items-center justify-content-start flex-column" style="flex: 1;">
+                    <div class=" sidebar-heading">There are 2 new tasks for you in “AirPlus Mobile App” project:</div>
+                    <div class="d-flex align-items-center justify-content-start w-100 gap-2" style="padding-block: 5px;">
                         <div class=" sidebar-container">
                             Added at 4:23 PM by
                         </div>
-                        <div><img src="./public/images/person.svg" alt=""></div>
+                        <div><img class="rounded-circle p-1" style="background-color: lightblue;" src="./public/images/person.svg" alt=""></div>
                     </div>
-                    <div class="d-flex broad-container gap-3 px-1 py-1">
+                    <div class="d-flex align-items-center justify-content-center broad-container gap-3 px-1 py-1">
                         <div class="w-100 d-flex sidebar-head">Meeting with customer</div>
-                        <div class="w-100 sidebar-head">Application design</div>
-                        <div class="w-100 d-flex side-img">
-                            <div class="img1"><img src="./public/images/person.svg" alt=""></div>
-                            <div class="img2"><img src="./public/images/person.svg" alt=""></div>
-                            <div class="img3"><img src="./public/images/person.svg" alt=""></div>
+                        <div class="w-100 sidebar-head w-100 rounded text-center" style="padding: 1px; background-color: lightgray;">Application design</div>
+                        <div class="w-100 d-flex align-items-center justify-content-center side-img">
+                            <div class="img1"><img class="rounded-circle" style="height: 20px; background-color: lightskyblue;"  src="./public/images/person.svg" alt=""></div>
+                            <div class="img2"><img class="rounded-circle" style="height: 20px; background-color: lightgreen;"  src="./public/images/person.svg" alt=""></div>
+                            <div class="img3"><img class="rounded-circle" style="height: 20px; background-color: lightsalmon;"  src="./public/images/person.svg" alt=""></div>
                         </div>
-                        <div class="w-100 sidebar-head">in progress</div>
-                        <div class="w-100 sidebar-head">view</div>
+                        <div class=" sidebar-head w-100 text-center rounded" style="padding: 1px; background-color: lightblue;">completed</div>
+                        <div class="w-100 sidebar-head text-center">view</div>
                     </div>
                     <div></div>
                 </div>
@@ -472,9 +488,9 @@
         </div>
     </div>
 
-    <div class="container-fluid">
+    <div class="container-fluid" style="padding-bottom: 50px;">
         <div class="row gap-4 d-flex align-items-center justify-content-center my-3">
-            <div class="col-sm-4 col-md-3 col-lg-3 gap-3 rounded d-flex align-items-center justify-content-center flex-column  graph-first-row" style="height: 100%;">
+            <div class="col-sm-4 col-md-3 col-lg-3 gap-3 rounded d-flex align-items-center justify-content-center flex-column  graph-first-row media-class-third">
                 <div class="text-center heading py-3">Kickstart <br> Mobile <br> Application</div>
                 <div class="py-3">
                     <button class=" rounded py-2 px-3" style="background-color: lightgreen; border: 0;">Create App</button>
@@ -489,8 +505,8 @@
                         <div class="heading">Campaign Leaders</div>
                         <div class="content">890,344 Sales</div>
                     </div>
-                    <div class="d-flex gap-3">
-                        <div id="day" class="content f-r-hover">Day</div>
+                    <div class="d-flex gap-5">
+                        <div id="day" class="content f-r-hover fr-hover">Day</div>
                         <div id="week" class="content f-r-hover">Week</div>
                         <div id="month" class="content f-r-hover">Month</div>
                     </div>
@@ -498,7 +514,7 @@
             <div id="show-day">
                 <div class="my-4 d-flex align-items-center justify-content-between w-100" style="overflow-x: auto;">
                     <div class="d-flex gap-2">
-                        <div class="d-flex align-items-center justify-content-center px-3 py-2 bg-success rounded"><img style="height: 25px; width: 25px;" src="./public/images/chat-square-text.svg" alt=""></div>
+                        <div class="d-flex align-items-center justify-content-center px-3 py-2 rounded" style="background-color: lightgreen;"><img style="height: 25px; width: 25px;" src="./public/images/chat-square-text.svg" alt=""></div>
                         <div>
                             <div class="heading">Top Authors</div>
                             <div class="content">HTML/CSS/JS, Python</div>
@@ -521,7 +537,7 @@
                 </div>
                 <div class="my-4 d-flex align-items-center justify-content-between" style="overflow-x: auto;">
                     <div class="d-flex gap-2">
-                        <div class="d-flex align-items-center justify-content-center px-3 py-2 bg-danger rounded"><img style="height: 25px; width: 25px;" src="./public/images/chat-square-text.svg" alt=""></div>
+                        <div class="d-flex align-items-center justify-content-center px-3 py-2 rounded" style="background-color: lightcoral;"><img style="height: 25px; width: 25px;" src="./public/images/chat-square-text.svg" alt=""></div>
                         <div>
                             <div class="heading">Popular Authors</div>
                             <div class="content">	Popular Authors
@@ -545,7 +561,7 @@
                 </div>
                 <div class="my-4 d-flex align-items-center justify-content-between" style="overflow-x: auto;">
                     <div class="d-flex gap-2">
-                        <div class="d-flex align-items-center justify-content-center px-3 py-2 rounded" style="background-color: yellow;"><img style="height: 25px; width: 25px;" src="./public/images/chat-square-text.svg" alt=""></div>
+                        <div class="d-flex align-items-center justify-content-center px-3 py-2 rounded" style="background-color: lightskyblue;"><img style="height: 25px; width: 25px;" src="./public/images/chat-square-text.svg" alt=""></div>
                         <div>
                             <div class="heading">New Products</div>
                             <div class="content">HTML/CSS/JS, Python</div>
@@ -568,7 +584,7 @@
                 </div>
                 <div class="my-4 d-flex align-items-center justify-content-between" style="overflow-x: auto;">
                     <div class="d-flex gap-2">
-                        <div class="d-flex align-items-center justify-content-center px-3 py-2 bg-primary rounded"><img style="height: 25px; width: 25px;" src="./public/images/chat-square-text.svg" alt=""></div>
+                        <div class="d-flex align-items-center justify-content-center px-3 py-2 rounded" style="background-color: lightyellow;"><img style="height: 25px; width: 25px;" src="./public/images/chat-square-text.svg" alt=""></div>
                         <div>
                             <div class="heading">Weekly Bestsellers</div>
                             <div class="content">HTML/CSS/JS, Python</div>
@@ -733,7 +749,7 @@
                 </div>
                 <div class="my-4 d-flex align-items-center justify-content-between" style="overflow-x: auto;">
                     <div class="d-flex gap-2">
-                        <div class="d-flex align-items-center justify-content-center px-3 py-2 rounded" style="background-color: yellow;"><img style="height: 25px; width: 25px;" src="./public/images/chat-square-text.svg" alt=""></div>
+                        <div class="d-flex align-items-center justify-content-center px-3 py-2 rounded" style="background-color: lightyellow;"><img style="height: 25px; width: 25px;" src="./public/images/chat-square-text.svg" alt=""></div>
                         <div>
                             <div class="heading">Top Authors</div>
                             <div class="content">HTML/CSS/JS, Python</div>
@@ -756,7 +772,7 @@
                 </div>
                 <div class="my-4 d-flex align-items-center justify-content-between" style="overflow-x: auto;">
                     <div class="d-flex gap-2">
-                        <div class="d-flex align-items-center justify-content-center px-3 py-2 bg-primary rounded"><img style="height: 25px; width: 25px;" src="./public/images/chat-square-text.svg" alt=""></div>
+                        <div class="d-flex align-items-center justify-content-center px-3 py-2 rounded" style="background-color: lightblue;"><img style="height: 25px; width: 25px;" src="./public/images/chat-square-text.svg" alt=""></div>
                         <div>
                             <div class="heading">Top Authors</div>
                             <div class="content">HTML/CSS/JS, Python</div>
@@ -781,7 +797,7 @@
             </div>
         </div>
         <div class="row gap-4 d-flex align-items-start justify-content-center my-3" >
-            <div class="col-sm-4 col-md-3 col-lg-3 gap-3 rounded d-flex align-items-start justify-content-center flex-column  graph-first-row" style="padding-bottom: 32%;">
+            <div class="col-sm-4 col-md-3 col-lg-3 gap-3 h-100 rounded d-flex align-items-start justify-content-center flex-column  graph-first-row second-media-class">
               <div class="d-flex align-items-center justify-content-between w-100 px-3 py-3">
                 <div class="d-flex flex-column">
                     <div class="heading">Sales Share</div>
@@ -803,61 +819,67 @@
                         <img style="height: 20px; width: 20px;" src="./public/images/grid.svg" alt="">
                     </div>
                 </div>
-                <div class="d-flex flex-column gap-3">
-                    <div id="first" class="d-flex align-items-center justify-content-start gap-2 px-4 px-3 rounded hoverclass" style=" width: fit-content;">
+                <div class="row d-flex align-items-center justify-content-between media-class p-3">
+                    <div class="col-sm-4 col-md-4 col-lg-3 d-flex align-items-center justify-content-center">
+                     <div class="d-flex align-items-center justify-content-center flex-column gap-4 " style="width: max-content;">
+                    <div id="first" class="d-flex align-items-center justify-content-start gap-4 px-4 px-3 rounded hoverclass" style=" width: max-content;">
                         <div>
-                            <img src="./public/images/grid.svg" alt="">
+                            <img src="./public/images/Screenshot 2024-12-16 163022.png" style="height: 25px;" alt="">
                         </div>
                         <div>
-                            <div class="heading">Man&Flower SaaS</div>
-                            <div class="content">HR Solutions</div>
-                        </div>
-                    </div>
-                    <div id="second" class="d-flex align-items-center justify-content-start gap-2 px-4 px-3 rounded hoverclass2" style=" width: fit-content;">
-                        <div>
-                            <img src="./public/images/grid.svg" alt="">
-                        </div>
-                        <div>
-                            <div class="heading">Man&Flower SaaS</div>
-                            <div class="content">HR Solutions</div>
+                            <div style="font-size: 18px; font-weight: 600;">Man&Flower SaaS</div>
+                            <div class="content media-font-content">HR Solutions</div>
                         </div>
                     </div>
-                    <div id="third" class="d-flex align-items-center justify-content-start gap-2 px-4 px-3 rounded hoverclass3" style=" width: fit-content;">
+                    <div id="second" class="d-flex align-items-center justify-content-start gap-4 px-4 px-3 rounded hoverclass2" style=" width: max-content;">
                         <div>
-                            <img src="./public/images/grid.svg" alt="">
+                            <img src="./public/images/Screenshot 2024-12-16 163036.png" style="height: 25px;" alt="">
                         </div>
                         <div>
-                            <div class="heading">Man&Flower SaaS</div>
-                            <div class="content">HR Solutions</div>
-                        </div>
-                    </div>
-                    <div id="fourth" class="d-flex align-items-center justify-content-start gap-2 px-4 px-3 rounded hoverclass4" style=" width: fit-content;">
-                        <div>
-                            <img src="./public/images/grid.svg" alt="">
-                        </div>
-                        <div>
-                            <div class="heading">Man&Flower SaaS</div>
-                            <div class="content">HR Solutions</div>
+                            <div style="font-size: 18px; font-weight: 600;">Man&Flower SaaS</div>
+                            <div class="content media-font-content">HR Solutions</div>
                         </div>
                     </div>
-                </div>
-                <div id="first-mid " class="d-flex align-items-center justify-content-center gap-4 my-3" style="display: none;">
+                    <div id="third" class="d-flex align-items-center justify-content-start gap-4 px-4 px-3 rounded hoverclass3" style=" width: max-content;">
+                        <div>
+                            <img src="./public/images/Screenshot 2024-12-16 163048.png" style="height: 25px;" alt="">
+                        </div>
+                        <div>
+                            <div style="font-size: 18px; font-weight: 600;">Man&Flower SaaS</div>
+                            <div class="content media-font-content">HR Solutions</div>
+                        </div>
+                    </div>
+                    <div id="fourth" class="d-flex align-items-center justify-content-start gap-4 px-4 px-3 rounded hoverclass4" style=" width: max-content;">
+                        <div>
+                            <img src="./public/images/Screenshot 2024-12-16 163057.png" style="height: 25px;" alt="">
+                        </div>
+                        <div>
+                            <div style="font-size: 18px; font-weight: 600;">Man&Flower SaaS</div>
+                            <div class="content media-font-content">HR Solutions</div>
+                        </div>
+                    </div>
+                    </div>
+                    </div>
+                    <div class="col-sm-4 col-md-4 col-lg-6 ">
+                    <div id="first-mid " class="d-flex align-items-center justify-content-center gap-5 my-3" style="display: none;">
                     <div>
-                        <div class="heading">Sale</div>
-                        <div class="content">$650</div>
+                        <div class="heading media-font-header">Sale</div>
+                        <div class="content media-font-content">$650</div>
                     </div>
                     <div>
-                        <div class="heading">Commision</div>
-                        <div class="content">$2,040</div>
+                        <div class="heading media-font-header">Commision</div>
+                        <div class="content media-font-content">$2,040</div>
                     </div>
                     <div>
-                        <div class="heading">Refers</div>
-                        <div class="content">8,926</div>
+                        <div class="heading media-font-header">Refers</div>
+                        <div class="content media-font-content">8,926</div>
                     </div>
-                </div>
-               
-                <div id="bar-chart-1" class="w-100 d-flex align-items-center justify-content-center"></div>
-               
+                    </div>
+                    <div class="d-flex align-items-center justify-content-center">
+                    <div id="bar-chart-1" class="w-100 d-flex align-items-center justify-content-center"></div>
+                    </div>
+                   </div>
+                 </div>
             </div>
         </div>
         <div class="row gap-4 d-flex align-items-center justify-content-center my-3" style="margin-bottom: 50px;">
@@ -915,13 +937,13 @@
                    </div>
                 </div>
             </div>
-            <div class="col-sm-4 col-md-6 col-lg-8   p-4 rounded graph-second-row">
-                <div class="d-flex align-items-center justify-content-between py-2 my-4">
+            <div class="col-sm-4 col-md-6 col-lg-8 pb-5  p-4 rounded graph-second-row">
+                <div class="d-flex align-items-center justify-content-between py-2 mb-3">
                     <div>
                         <div class="heading">Achievement</div>
                         <div class="content">890,344 Sales</div>
                     </div>
-                    <div class="d-flex align-items-center justify-content-center gap-3">
+                    <div class="d-flex align-items-center justify-content-center gap-5">
                         <div class="content">Day</div>
                         <div class="content">Week</div>
                         <div class="content">Month</div>
@@ -929,14 +951,14 @@
                 </div>
                 <div class="d-flex align-items-center justify-content-center flex-column gap-3">
                     <div class="d-flex align-items-center  justify-content-between w-100">
-                        <div class="d-flex align-items-center justify-content-center gap-2">
-                            <div class="p-2 bg-success rounded"><img src="./public/images/person.svg" alt=""></div>
+                        <div class="d-flex align-items-center justify-content-start gap-3 w-100">
+                            <div class="p-2 rounded" style="background-color: lightgreen;"><img src="./public/images/person.svg" alt=""></div>
                             <div>
                                 <div class="heading">Brad Simmons</div>
                                 <div class="content">HTML, CSS Coding</div>
                             </div>
                         </div>
-                        <div class="d-flex align-items-center justify-content-center gap-3">
+                        <div class="d-flex align-items-center justify-content-end gap-4 w-100">
                             <div>
                                 <div class="heading">$1,200,000</div>
                                 <div class="content">Paid</div>
@@ -946,14 +968,14 @@
                         </div>
                     </div>
                     <div class="d-flex align-items-center  justify-content-between w-100">
-                        <div class="d-flex align-items-center justify-content-center gap-2">
-                            <div class="p-2 rounded" style="background-color: blue;"><img src="./public/images/person.svg" alt=""></div>
+                        <div class="d-flex align-items-center justify-content-start gap-3 w-100">
+                            <div class="p-2 rounded" style="background-color: lightblue;"><img src="./public/images/person.svg" alt=""></div>
                             <div>
                                 <div class="heading">Brad Simmons</div>
                                 <div class="content">HTML, CSS Coding</div>
                             </div>
                         </div>
-                        <div class="d-flex align-items-center justify-content-center gap-3">
+                        <div class="d-flex align-items-center justify-content-end gap-4">
                             <div>
                                 <div class="heading">$1,200,000</div>
                                 <div class="content">Paid</div>
@@ -963,14 +985,14 @@
                         </div>
                     </div>
                     <div class="d-flex align-items-center  justify-content-between w-100">
-                        <div class="d-flex align-items-center justify-content-center gap-2">
-                            <div class="p-2 bg-success rounded"><img src="./public/images/person.svg" alt=""></div>
+                        <div class="d-flex align-items-center justify-content-start w-100 gap-3">
+                            <div class="p-2 rounded" style="background-color: lightseagreen;"><img src="./public/images/person.svg" alt=""></div>
                             <div>
                                 <div class="heading">Brad Simmons</div>
                                 <div class="content">HTML, CSS Coding</div>
                             </div>
                         </div>
-                        <div class="d-flex align-items-center justify-content-center gap-3">
+                        <div class="d-flex align-items-center justify-content-end  gap-4">
                             <div>
                                 <div class="heading">$1,200,000</div>
                                 <div class="content">Paid</div>
@@ -980,14 +1002,14 @@
                         </div>
                     </div>
                     <div class="d-flex align-items-center  justify-content-between w-100">
-                        <div class="d-flex align-items-center justify-content-center gap-2">
-                            <div class="p-2 rounded" style="background-color: yellow;"><img src="./public/images/person.svg" alt=""></div>
+                        <div class="d-flex align-items-center justify-content-start w-100 gap-3">
+                            <div class="p-2 rounded" style="background-color: lightsalmon;"><img src="./public/images/person.svg" alt=""></div>
                             <div>
                                 <div class="heading">Brad Simmons</div>
                                 <div class="content">HTML, CSS Coding</div>
                             </div>
                         </div>
-                        <div class="d-flex align-items-center justify-content-center gap-3">
+                        <div class="d-flex align-items-center justify-content-end gap-4">
                             <div>
                                 <div class="heading">$1,200,000</div>
                                 <div class="content">Paid</div>
@@ -997,14 +1019,14 @@
                         </div>
                     </div>
                     <div class="d-flex align-items-center  justify-content-between w-100">
-                        <div class="d-flex align-items-center justify-content-center gap-2">
-                            <div class="p-2 bg-danger rounded"><img src="./public/images/person.svg" alt=""></div>
+                        <div class="d-flex align-items-center justify-content-start gap-3">
+                            <div class="p-2 rounded" style="background-color: lightpink;"><img src="./public/images/person.svg" alt=""></div>
                             <div>
                                 <div class="heading">Brad Simmons</div>
                                 <div class="content">HTML, CSS Coding</div>
                             </div>
                         </div>
-                        <div class="d-flex align-items-center justify-content-center gap-3">
+                        <div class="d-flex align-items-center justify-content-end gap-4">
                             <div>
                                 <div class="heading">$1,200,000</div>
                                 <div class="content">Paid</div>

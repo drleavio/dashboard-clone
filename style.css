@@ -107,16 +107,21 @@
     display: none;
 }
 .chat-class{
+    position: absolute;
+    height: 100vh;
+    width: 600px;
     display: flex;
     flex-direction: column;
-    position: absolute;
+    z-index: 4;
+    background-color: white;
     top: 0;
     right: 0;
-    z-index: 4;
-    height: 100vh;
-    width: 350px;
-    background-color: rgb(241, 254, 255);
-    margin: 0;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    border-left: 1px solid gray;
+    @media screen and (max-width:768px) {
+        width: 100vw;
+    }
 }
 
 @keyframes leftIn{
@@ -158,11 +163,16 @@
     border-bottom: 1px solid gray;
 }
 .bg-chat{
-    background-color: aliceblue;
+    background-color: lightgray;
 }
 .mid-section{
-   flex: 1;
-   overflow-y: scroll;
+    padding: 20px;
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 }
 
 .modal-heading{
@@ -261,20 +271,25 @@
 .sidebar-show{
     position: absolute;
     height: 100vh;
-    width: 400px;
+    width: 600px;
     display: flex;
     flex-direction: column;
     z-index: 4;
-    background-color: rgb(249, 236, 236);
+    background-color: white;
     top: 0;
     right: 0;
     overflow-y: hidden;
     overflow-x: hidden;
+    border-left: 1px solid gray;
+    @media screen and (max-width:768px) {
+        width: 100vw;
+    }
 }
 .sidebar-hidden{
     display: none;
 }
 .sidebar-upper{
+    width: 100%;
     border-bottom: 1px solid gray;
 }
 .sidebar-middle-section{
@@ -284,6 +299,7 @@
     overflow-x: hidden;
     display: flex;
     flex-direction: column;
+    width: 100%;
 }
 .first-div{
     display: flex;
@@ -494,3 +510,58 @@ body {
 /* .hide-middle{
     display: none;
 } */
+
+.media-class{
+    @media screen and (max-width:992px) {
+        flex-direction: column;
+    }
+}
+.second-media-class{
+    padding-bottom: 142px;
+    @media screen and (max-width:992px) {
+        padding-bottom: 545px;
+    }
+}
+.media-class-third{
+    @media screen and ((min-width:926px) and (max-width:1440px)){
+        padding-bottom: 0px;
+    }
+    @media screen and (max-width:925px) {
+        padding-bottom: 180px;
+    }
+    @media screen and (max-width:808px) {
+        padding-bottom: 280px;
+    }
+}
+
+.media-font-header{
+    @media screen and (max-width:900px) {
+        font-size: 18px;
+       font-weight: 600;
+       }
+   @media screen and (max-width:768px) {
+    font-size: 15px;
+   font-weight: 600;
+   }
+}
+.media-font-content{
+    @media screen and (max-width:900px) {
+        font-size: 15px;
+       font-weight: 600;
+       }
+   @media screen and (max-width:768px) {
+    font-size: 12px;
+   font-weight: 600;
+   }
+}
+.body-flow{
+    overflow: hidden;
+}
+.bgc-show{
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    z-index: 1;
+    background-color: rgba(198, 196, 196, 0.7);
+    overflow: hidden;
+}

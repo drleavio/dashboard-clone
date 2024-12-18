@@ -22,6 +22,8 @@ const barchartfirst=document.getElementById('bar-chart-1')
 const barchartsecond=document.getElementById('bar-chart-2')
 const barchartthird=document.getElementById('bar-chart-3')
 const barchartfourth=document.getElementById('bar-chart-4')
+const bodybtn=document.getElementById('body')
+const toggle=document.getElementById('bgc-toggle')
 
 firstbtn.addEventListener('click',function(){
     firstbtn.classList.add('hover-bgc');
@@ -110,6 +112,8 @@ showWeekbtn.addEventListener('click',function(){
 searchElement.addEventListener('click',function(){
     console.log("clicked");
     element.classList.remove('search-class-hidden')
+    bodybtn.classList.add('body-flow')
+    toggle.classList.add('bgc-show')
     element.classList.add('search-class')
     element.classList.add('fadein')
 })
@@ -123,13 +127,17 @@ closebtn.addEventListener('click',function(e){
         element.classList.remove('search-class')
          element.classList.add('search-class-hidden')
          element.classList.remove('fadeout')
+         bodybtn.classList.remove('body-flow')
+         toggle.classList.remove('bgc-show')
     },{once:true})
     
 })
 chaticon.addEventListener('click',function(){
     chatele.classList.remove('chat-class-hidden');
     chatele.classList.add('leftin')
+    bodybtn.classList.add('body-flow')
     chatele.classList.add('chat-class')
+    toggle.classList.add('bgc-show')
 })
 
 chatclosebtn.addEventListener('click',function(e){
@@ -139,6 +147,8 @@ chatclosebtn.addEventListener('click',function(e){
 
     chatele.addEventListener('animationend',function(){
     chatele.classList.remove('chat-class')
+    bodybtn.classList.remove('body-flow')
+    toggle.classList.remove('bgc-show')
     chatele.classList.add('chat-class-hidden')
     chatele.classList.remove('rightin')
     },{once:true})
@@ -152,6 +162,8 @@ const closesidebar=document.getElementById('close-sidebar')
 opensidebar.addEventListener('click',function(){
     sidebarelement.classList.remove('sidebar-hidden')
     sidebarelement.classList.add('leftin')
+    bodybtn.classList.add('body-flow')
+    toggle.classList.add('bgc-show')
     sidebarelement.classList.add('sidebar-show')
 })
 
@@ -161,6 +173,8 @@ closesidebar.addEventListener('click',function(e){
     sidebarelement.addEventListener('animationend',function(){
         sidebarelement.classList.remove('sidebar-show')
         sidebarelement.classList.add('sidebar-hidden')
+        bodybtn.classList.remove('body-flow')
+        toggle.classList.remove('bgc-show')
         sidebarelement.classList.remove('rightin')
     },{once:true})
 })
@@ -197,7 +211,7 @@ const options = {
     chart: {
       type: 'bar',
       height: 300,
-      width:500
+      width:400
     },
     series: [{
       name: 'Value',
