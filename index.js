@@ -24,6 +24,40 @@ const barchartthird=document.getElementById('bar-chart-3')
 const barchartfourth=document.getElementById('bar-chart-4')
 const bodybtn=document.getElementById('body')
 const toggle=document.getElementById('bgc-toggle')
+const modalOpen=document.getElementById('modal-open')
+const modalSmall=document.getElementById('modal-small')
+const modalClose=document.getElementById('modal-close-btn')
+const modalOpen1=document.getElementById('modal-open-1')
+const modalSmall1=document.getElementById('modal-small-1')
+const modalClose1=document.getElementById('modal-close-btn-1')
+
+modalOpen.addEventListener('click',function(){
+  modalSmall.classList.remove('modal-small-hide')
+  modalSmall.classList.add('modal-small-show')
+  modalClose.classList.remove('modal-close-buton-hide')
+  modalClose.classList.add('modal-close-buton-show')
+})
+modalClose.addEventListener('click',function(){
+  console.log('hello');
+  modalSmall.classList.add('modal-small-hide');
+  modalSmall.classList.remove('modal-small-show')
+  modalClose.classList.add('modal-close-buton-hide')
+  modalClose.classList.remove('modal-close-buton-show')
+})
+
+modalOpen1.addEventListener('click',function(){
+  modalSmall1.classList.remove('modal-small-hide-1')
+  modalSmall1.classList.add('modal-small-show-1')
+  modalClose1.classList.remove('modal-close-buton-hide-1')
+  modalClose1.classList.add('modal-close-buton-show-1')
+})
+modalClose1.addEventListener('click',function(){
+  console.log('hello');
+  modalSmall1.classList.add('modal-small-hide-1');
+  modalSmall1.classList.remove('modal-small-show-1')
+  modalClose1.classList.add('modal-close-buton-hide-1')
+  modalClose1.classList.remove('modal-close-buton-show-1')
+})
 
 firstbtn.addEventListener('click',function(){
     firstbtn.classList.add('hover-bgc');
@@ -110,7 +144,6 @@ showWeekbtn.addEventListener('click',function(){
 
 
 searchElement.addEventListener('click',function(){
-    console.log("clicked");
     element.classList.remove('search-class-hidden')
     bodybtn.classList.add('body-flow')
     toggle.classList.add('bgc-show')
